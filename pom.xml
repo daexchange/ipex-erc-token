@@ -64,7 +64,7 @@
         </dependency>
         <dependency>
             <groupId>ai.turbochain.ipex</groupId>
-            <artifactId>ipex-pwr-support</artifactId>
+            <artifactId>ipex-eth-support</artifactId>
             <version>1.0.1</version>
         </dependency>
 

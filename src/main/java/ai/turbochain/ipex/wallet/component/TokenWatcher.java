@@ -59,8 +59,8 @@ public class TokenWatcher extends Watcher{
                 Transaction transaction = transactionObject.get();
                 try {
                     EthGetTransactionReceipt receipt =  web3j.ethGetTransactionReceipt(transaction.getHash()).send();
-                    if(receipt.getTransactionReceipt().get()!=null){
-                    	//receipt.getTransactionReceipt().get().getStatus().equalsIgnoreCase("0x1")
+                    if(receipt.getTransactionReceipt().get().getStatus().equalsIgnoreCase("0x1")){
+                    	//receipt.getTransactionReceipt().get()!=null
                         //当eventTopic0参数不为空时检查event_log结果，防止低版本的token假充值
                         if(StringUtils.isNotEmpty(contract.getEventTopic0()) && etherscanApi != null){
                             boolean checkEvent = etherscanApi.checkEventLog(blockHeight,contract.getAddress(),contract.getEventTopic0(),transaction.getHash());

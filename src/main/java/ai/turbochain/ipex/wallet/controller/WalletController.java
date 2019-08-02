@@ -59,7 +59,7 @@ public class WalletController {
 	@GetMapping("address/{account}")
 	public MessageResult getNewAddress(@PathVariable String account,
 			@RequestParam(required = false, defaultValue = "") String password,
-			@RequestParam(required = false, defaultValue = "PWR") String coinUnit) {
+			@RequestParam(required = false, defaultValue = "ETH") String coinUnit) {
 		logger.info("create new account={},password={},coinUnit={}", account, password, coinUnit);
 		try {
 			String address;
@@ -91,7 +91,7 @@ public class WalletController {
 	 */
 	@GetMapping("transfer-from-address")
 	public MessageResult transferFromAddress(String fromAddress, String address, BigDecimal amount, BigDecimal fee,
-			@RequestParam(required = false, defaultValue = "PWR") String coinUnit) {
+			@RequestParam(required = false, defaultValue = "ETH") String coinUnit) {
 		logger.info("transferFromAddress:from={},to={},amount={},fee={}，coinUnit={}", fromAddress, address, amount, fee,
 				coinUnit);
 		try {
